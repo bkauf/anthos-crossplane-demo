@@ -1,0 +1,19 @@
+apiVersion: demo.anthos.com/v1
+kind: CompositeCluster 
+metadata:
+  name: bkauf-aks
+spec:
+  compositionRef:
+    # Possible values cluster-gcp-gke, cluster-aws-eks, cluster-azure-aks
+    name: cluster-azure-aks
+  parameters:
+    # Possible values small, medium, large
+    nodeSize: medium
+    k8sVersion: "1.25"
+    fleetProject: "261832825633"
+    minNodeCount: 2
+    adminUsers:
+    - bkauf@google.com  
+  writeConnectionSecretToRef:
+    namespace: default
+    name: b-team

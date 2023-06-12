@@ -1,0 +1,23 @@
+# example of creating a cluster via a ns scoped object
+apiVersion: demo.anthos.com/v1
+kind: Cluster
+metadata:
+  name: bkauf-gke1
+spec:
+  compositionRef:
+      # Possible values cluster-gcp-gke, cluster-aws-eks, cluster-azure-aks
+    name: cluster-gcp-gke
+  parameters:
+    location: "us-central1" # us-east-1 hard coded in aws eks compositions
+    clusterName: "bkauf-gke1"
+    nodeSize: medium  # Possible values small, medium, large
+    k8sVersion: "1.25"
+    fleetProject: "261832825633" #GCP project ID
+    minNodeCount: 1
+    adminUsers:
+    - bkauf@google.com
+    anthosGCPRegion: us-east4 #us-east4 or us-west1
+    #Azure Specific 
+    resourceGroup: bkauf
+   
+

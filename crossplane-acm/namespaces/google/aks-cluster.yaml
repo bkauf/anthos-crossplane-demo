@@ -12,7 +12,7 @@ spec:
     clusterName: "cluster-aks"
     nodeSize: medium  # Possible values small, medium, large
     minNodeCount: 2
-    k8sVersion: "1.24"
+    k8sVersion: "1.26"
     fleetProject: "261832825633" #GCP project number of fleet
     # Available GCP Regions for attached cluster API 
     #https://cloud.google.com/anthos/clusters/docs/multi-cloud/attached/eks/reference/supported-regions
